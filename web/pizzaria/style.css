@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+form {
+    width: 50%;
+    padding: 20px;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 235);
+    font-family: "Winky Sans";
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
+}   
+
+#firstName,#lastName, #pizza{
+    display: block; 
+}
+
+h1{
+    text-align: center;
+    font-family: "Oswald";
+    color: rgb(0, 0, 0);
+}
+
+h2{
+    text-align: center;
+}
+
+body{
+    background-repeat: repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+#submit:hover, #reset:hover {
+    background-color: gold;
+  }
+
+#firstName:focus,#lastName:focus{
+    background-color: rgb(199, 199, 193); 
+}
+
+ul {
+    list-style-type: none;
+    margin: 20%;
+    overflow: hidden;
+    background-color: #333;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+  }
+
+#topbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+
+li {
+    display: inline;
+    float: left;
+  }
+
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

@@ -1,0 +1,68 @@
+
+
+.animation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sprite-display-container {
+    width: 600px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#sprite-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(2.5);
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*
+.anim-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    min-width: 100px;
+}
+
+.anim-btn:hover {
+    background-color: #45a049;
+}
+
+.anim-btn:active {
+    transform: scale(0.98);
+}
+
+.anim-btn[data-anim="attack"] {
+    background-color: #f44336;
+}
+
+.anim-btn[data-anim="death"] {
+    background-color: #9e9e9e;
+}
+
+.anim-btn[data-anim="hurt"] {
+    background-color: #ff9800;
+}
+
+.anim-btn[data-anim="walk"] {
+    background-color: #2196F3;
+}
+    */

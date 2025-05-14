@@ -1,0 +1,215 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+    padding: 20px;
+}
+
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2, h3 {
+    color: #f8bb22;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #0f3460;
+    border: 1px solid #533d7b;
+    color: white;
+    border-radius: 5px;
+}
+
+#start-game, .action-button {
+    background-color: #533d7b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+}
+
+#start-game:hover, .action-button:hover {
+    background-color: #6a4c9b;
+}
+
+
+.player-info {
+    background-color: #0f3460;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.health-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+#health-bar-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s;
+}
+
+.event-container {
+    background-color: #0f3460;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#event-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#event-choices {
+    margin-top: 15px;
+}
+
+#event-choices button {
+    margin: 5px 0;
+}
+
+#topbar {
+    background-color: var(--rpg-darker);
+    border-bottom: 3px solid var(--rpg-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 2rem;
+    font-family: 'MedievalSharp', cursive, sans-serif;
+}
+
+#topbar nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Liens principaux */
+#topbar nav a {
+    color: var(--rpg-text-dimmed);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+#topbar nav a:hover {
+    color: var(--rpg-text);
+    text-shadow: 0 0 5px rgba(155, 89, 182, 0.7);
+}
+
+/* Effet de soulignage RPG */
+#topbar nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--rpg-primary), var(--rpg-gold));
+    transition: width 0.3s ease;
+}
+
+#topbar nav a:hover::after {
+    width: 100%;
+}
+
+/* Lien actif */
+#topbar nav a[href="./index.php"] {
+    color: var(--rpg-text);
+    font-weight: bold;
+}
+
+/* Boutons spéciaux (connexion/déconnexion) */
+.nav-link {
+    padding: 0.5rem 1.2rem !important;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-link[href="./logout.php"] {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--rpg-danger) !important;
+}
+
+.nav-link[href="./login.php"],
+.nav-link[href="./register.php"] {
+    background-color: rgba(155, 89, 182, 0.2);
+    color: var(--rpg-primary) !important;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation spéciale pour le bouton de déconnexion */
+.nav-link[href="./logout.php"]:hover {
+    background-color: rgba(231, 76, 60, 0.4) !important;
+    animation: pulse-red 1.5s infinite;
+}
+
+
+
+#sprite-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.sprite {
+  background-image: url('spritesheet.png');
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 10px;
+    }
+}
