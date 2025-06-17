@@ -1,18 +1,32 @@
 <?php require "header.php";?>
 
 <?php
-    $userController = new UserController();
-    if ($_POST) {
-        $_POST["Password"] = password_hash($_POST["Password"], PASSWORD_DEFAULT);
-        $newUser = new User($_POST);
-        $userController->createUser($newUser);
-        $_SESSION["username"] = $newUser->getUsername();
-        $_SESSION["email"] = $newUser->getEmail();
-        print_r($_SESSION);
-        echo "<script>window.location.href='game.php'</script>";
-    }
+$error = null;
+$userController = new UserController();
 
+if ($_POST) {
+    $email = $_POST['Email'];
+
+    // Vérification plus robuste de l'existence de l'email
+    if ($userController->emailExists($email)) {
+        $error = "Cette adresse email est déjà utilisée.";
+    } else {
+        try {
+            $_POST["Password"] = password_hash($_POST["Password"], PASSWORD_DEFAULT);
+            $newUser = new User($_POST);
+            $_SESSION["username"] = $newUser->getUsername();
+            $_SESSION["email"] = $newUser->getEmail();
+            $userController->createUser($newUser);
+            header("Location: game.php");
+            exit;
+        } catch (Exception $e) {
+            error_log("Erreur création compte: " . $e->getMessage());
+            $error = "Une erreur technique est survenue. Veuillez réessayer plus tard.";
+        }
+    }
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -40,7 +54,9 @@
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="Password" minlength=3 max=100>
                 <input type="submit" class="mt-2 btn btn-outline-success" value="Créer">
                 <p>Deja un compte ? <a href="./login.php">Se connecter</a></p>
-
+                <?php if ($error): ?>
+                    <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+                <?php endif; ?>
                 
             </form>
         </div>

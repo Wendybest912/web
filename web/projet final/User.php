@@ -1,4 +1,5 @@
 <?php
+// Classe représentant un utilisateur du système
     class User
     {
         private int $id;
@@ -14,7 +15,7 @@
         public function hydrate(array $data): void
         {
             foreach ($data as $key => $value) {
-                $method = "set" . ucfirst($key); // setId, setNumber, setName, etc.
+                $method = "set" . ucfirst($key); 
                 if (method_exists($this, $method)) {
                     $this->$method($value);
                 }

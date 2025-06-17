@@ -38,10 +38,136 @@ body {
     height: 100vh;
 }
 
+.game-over-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.game-over-content {
+    background-size: cover;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    border: 2px solid #8B4513;
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.7);
+}
+
+.game-over-content h1 {
+    font-size: 4rem;
+    color: #8B0000;
+    text-shadow: 2px 2px 4px #000;
+    margin-bottom: 1rem;
+}
+
+.stats-container {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+}
+
+.stats-container p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.game-over-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.game-over-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-btn:active {
+    transform: translateY(1px);
+}
+
+.quote {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Game Over Screen */
+.game-over-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+    text-align: center;
+}
+
+.game-over-screen h2 {
+    font-size: 3rem;
+    color: #ff3333;
+    margin-bottom: 20px;
+}
+
+.game-over-screen p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.game-over-screen button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-over-screen button:hover {
+    background-color: #ff5555;
+}
+
 /* Barre de statut */
 .status-bar {
     background: linear-gradient(to right, var(--dark-color), var(--darker-color));
     padding: 0.8rem 1.5rem;
+    padding-top: 5%;
     border-bottom: 2px solid var(--primary-color);
     display: flex;
     justify-content: space-between;
@@ -136,20 +262,32 @@ body {
 /* Interface de combat */
 .combat-interface {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(26, 26, 46, 0.95);
     border: 2px solid var(--combat-color);
     border-radius: 10px;
     padding: 2rem;
-    width: 80%;
-    max-width: 600px;
+    width: 60%;
+    max-width: 500px;
     text-align: center;
     z-index: 10;
     box-shadow: 0 0 30px rgba(192, 57, 43, 0.5);
     display: none;
+    
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        width: 95%;
+        top: 40%; /* Lower on mobile for better accessibility */
+        max-height: 80vh; /* Prevents overflow */
+        overflow-y: auto; /* Allows scrolling if content is too tall */
 }
+}
+
+
+
 
 .enemy-info h3 {
     font-family: var(--title-font);
@@ -299,6 +437,7 @@ body {
 }
 
 .sprite-display-container {
+    padding-left: 35%;
     width: 600px;
     height: 150px;
     border-radius: 8px;
@@ -341,16 +480,48 @@ body {
 }
 
 .character {
+    left: 20%;
     width: 50%;
-    height: 155px;
+    height: 20%;
+    bottom: 0%;
+}
+
+.enemy-canvas {
+    position: fixed;  
+    right: 40%;
+    bottom: 3%;
+    transform: scaleX(-1) scale(2);
+    transform-origin: bottom right;
+    image-rendering: pixelated; 
 }
 
 
-#player-canvas, #enemy-canvas {
+#player-canvas { 
+    position: absolute; /* ou fixed */
+    bottom: -10%;
     height: 100%;
     image-rendering: pixelated;
-    transform: scale(3);
+    transform: scale(2);
+
+
 }
 
+@media (max-width: 668px) {
+    .enemy-canvas {
+    position: fixed;  
+    right: 40%;
+    bottom: 6%;
+    transform: scaleX(-1) scale(2);
+    transform-origin: bottom right;
+    image-rendering: pixelated; 
+}
 
+    #player-canvas { 
+    position: absolute; /* ou fixed */
+    bottom: -5%;
+    height: 100%;
+    image-rendering: pixelated;
+    transform: scale(2);
+}
+}
 

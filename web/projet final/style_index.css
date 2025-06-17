@@ -56,7 +56,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/images/parchment-texture.png') center/cover no-repeat;
     opacity: 0.1;
     z-index: -1;
 }
@@ -315,7 +314,6 @@ body {
 /* CTA Section */
 .cta-section {
     padding: 8rem 2rem;
-    background: url('assets/images/cta-bg.jpg') center/cover no-repeat;
     position: relative;
     text-align: center;
 }
@@ -510,4 +508,76 @@ body {
         width: 100%;
         text-align: center;
     }
+}
+
+/* ... (garder tout le CSS existant) ... */
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    /* ... (garder les autres styles existants) ... */
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--dark-color);
+        padding: 2rem;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        border-top: 1px solid rgba(155, 89, 182, 0.3);
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-item .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* ... (garder les autres styles existants) ... */
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    }
+        
+th, td { 
+    padding: 8px;
+    border: 1px solid #ddd; 
+    text-align: left; 
+    }
+
+th { 
+    background-color: #f2f2f2; 
 }
