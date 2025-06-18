@@ -1,0 +1,162 @@
+{
+	"frames": [
+		{
+			"filename": "Soldier-Attack01.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 600,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Attack02.png",
+			"frame": {
+				"x": 1,
+				"y": 103,
+				"w": 600,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Death.png",
+			"frame": {
+				"x": 1,
+				"y": 205,
+				"w": 400,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 400,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 400,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Hurt.png",
+			"frame": {
+				"x": 1,
+				"y": 307,
+				"w": 400,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 400,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 400,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Idle.png",
+			"frame": {
+				"x": 1,
+				"y": 409,
+				"w": 600,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Walk.png",
+			"frame": {
+				"x": 1,
+				"y": 511,
+				"w": 800,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 800,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 800,
+				"h": 100
+			}
+		},
+		{
+			"filename": "Soldier-Walk02.png",
+			"frame": {
+				"x": 603,
+				"y": 1,
+				"w": 800,
+				"h": 100
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 800,
+				"h": 100
+			},
+			"sourceSize": {
+				"w": 800,
+				"h": 100
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1404,
+			"h": 612
+		},
+		"scale": "1"
+	}
+}
