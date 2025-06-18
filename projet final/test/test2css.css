@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #16213e;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    max-width: 1200px;
+}
+
+h1 {
+    color: #f95959;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+#generate-btn {
+    background-color: #f95959;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+#generate-btn:hover {
+    background-color: #d83f3f;
+    transform: scale(1.05);
+}
+
+#monster-container {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    position: relative;
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.monster {
+    position: absolute;
+    background-image: url('spritesheet.png');
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 10px rgba(249, 89, 89, 0.7));
+}
+
+.monster-info {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 52, 96, 0.9);
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top: 2px solid #f95959;
+}
+
+@keyframes appear {
+    from { 
+        transform: scale(0) rotate(0deg); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1) rotate(360deg); 
+        opacity: 1; 
+    }
+}
+
+.monster-appear {
+    animation: appear 0.7s ease-out forwards;
+}
+
+@media (max-width: 900px) {
+    #monster-container {
+        width: 90vw;
+        height: 90vw;
+    }
+    
+    .container {
+        padding: 1rem;
+        width: 100%;
+    }
+}
